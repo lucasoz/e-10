@@ -1,0 +1,26 @@
+<table class="table">
+  <thead>
+    <tr>
+    <th>Name</th>
+    <th>Date of Birth</th>
+    <th>Date of Death</th>
+    <th>Total Books</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each model as |author|}}
+      <tr>
+      <td>
+      {{#link-to 'authors.author' author.id}}
+        {{author.name}}
+      {{/link-to}}  
+      </td>
+      <td>{{author.dateOfBirth}}</td>
+      <td>{{author.dateOfDeath}}</td>
+      <td>{{author.books.length}}</td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
+
+{{yield}}

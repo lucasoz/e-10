@@ -1,0 +1,20 @@
+<h2>{{model.title}}´s chapters</h2>
+<button type="button" {{action 'edit' model.id}}>Edit</button>
+<button type="button" {{action 'delete' model.id}}>Delete</button>
+<table class="table">
+  <thead>
+    <tr>
+    <th>Title</th>
+    <th>Ordering</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each model.chapters as |chapter|}}
+      <tr>
+      <td>{{chapter.title}}</td>
+      <td>{{chapter.ordering}}</td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
+{{outlet}}
